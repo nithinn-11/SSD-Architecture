@@ -4,11 +4,9 @@ Clean, structured study notes **and slides** on **SSD Firmware Architecture**.
 
 ## 🎬 Slide Walkthrough (video)
 
-▶️ **[Click here to play the walkthrough video](SSD-Firmware-Architecture-walkthrough.mp4)** — all 32 slides, auto-advancing (~3 s each).
+### ▶️ [Click here to play the walkthrough video](https://github.com/nithinn-11/SSD-Architecture/blob/main/SSD-Firmware-Architecture-walkthrough.mp4)
 
-<video src="https://raw.githubusercontent.com/nithinn-11/SSD-Architecture/main/SSD-Firmware-Architecture-walkthrough.mp4" controls muted width="100%"></video>
-
-> The player above appears on GitHub — press play to watch. If it doesn't load, click the **▶️ link** and GitHub opens its built-in video player.
+All 32 slides, auto-advancing (~3 s each). The link opens GitHub's built-in video player — just press play.
 
 ## 📂 Files
 
