@@ -2,19 +2,12 @@
 
 Clean, structured study notes **and slides** on **SSD Firmware Architecture**.
 
-## 🎬 Slide Walkthrough
-
-[![Play the slide walkthrough](SSD-Firmware-Architecture-poster.png)](SSD-Firmware-Architecture-walkthrough.gif)
-
-*▶️ **Click the image above to play** — all 32 slides play through in sequence (~2.5 s each), no download needed.*
-
 ## 📂 Files
 
 | File | Description |
 |------|-------------|
 | [firmware-architecture-notes.md](./firmware-architecture-notes.md) | Complete notes — the three-layer **FE → FTL → BE** model and every supporting subsystem. |
 | [SSD-Firmware-Architecture.pptx](./SSD-Firmware-Architecture.pptx) | Full slide deck: every notes section in order, with flowcharts, diagrams and real-world examples. |
-| [SSD-Firmware-Architecture-walkthrough.gif](./SSD-Firmware-Architecture-walkthrough.gif) | Animated walkthrough of the full deck (auto-plays in this README). |
 
 ## What's inside
 

@@ -1,0 +1,6 @@
+# Generated media — kept local only, never committed to the repo.
+# To show a playing video on GitHub, drag one of these into the README
+# via the GitHub web editor (it uploads to GitHub's CDN, not the repo).
+*.mp4
+*.gif
+*-poster.png
