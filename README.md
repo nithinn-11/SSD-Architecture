@@ -26,8 +26,3 @@ The notes cover, clearly and section by section:
 - **QoS & scheduling** — watermarks, GC throttling, tail-latency targets, VWC/FUA
 - **End-to-end write path** — a 4 KB host write traced from SQE to NAND program
 - **Glossary** and **common pitfalls**
-
-## Related material
-
-Broader reference documents live under [`../knowledge-base/`](../knowledge-base/)
-(NAND flash, NVMe, PCIe, FTL algorithms, testing, embedded systems).
