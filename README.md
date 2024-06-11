@@ -4,9 +4,9 @@ Clean, structured study notes **and slides** on **SSD Firmware Architecture**.
 
 ## 🎬 Slide Walkthrough
 
-![SSD Firmware Architecture — slide walkthrough](SSD-Firmware-Architecture-walkthrough.gif)
+[![Play the slide walkthrough](SSD-Firmware-Architecture-poster.png)](SSD-Firmware-Architecture-walkthrough.gif)
 
-*All 32 slides play automatically above (~2.5 s each) — no click or download needed.*
+*▶️ **Click the image above to play** — all 32 slides play through in sequence (~2.5 s each), no download needed.*
 
 ## 📂 Files
 
