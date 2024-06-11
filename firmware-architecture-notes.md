@@ -22,8 +22,6 @@
 11. [Power-Loss Recovery (SPOR)](#11-power-loss-recovery-spor)
 12. [QoS & Command Scheduling](#12-qos--command-scheduling)
 13. [End-to-End Write Path](#13-end-to-end-write-path)
-14. [Glossary](#14-glossary)
-15. [Common Pitfalls](#15-common-pitfalls)
 
 ---
 
@@ -566,42 +564,3 @@ Host  ->  FE                    ->  FTL                    ->  BE            -> 
 
 With VWC (`FUA=0`) the command can complete at step 6 (data safely in the
 PLP-protected DRAM buffer) and the NAND program happens in the background.
-
----
-
-## 14. Glossary
-
-| Term | Meaning |
-|------|---------|
-| **FE / FTL / BE** | Front-End / Flash Translation Layer / Back-End firmware layers |
-| **L2P** | Logical-to-Physical mapping table (LPN → PPA) |
-| **PPA** | Physical Page Address (channel, die, plane, block, page) |
-| **GC** | Garbage Collection — reclaim space from invalidated pages |
-| **WL** | Wear Leveling — even out P/E cycles across blocks |
-| **WAF** | Write Amplification Factor = NAND writes / host writes |
-| **OP** | Over-Provisioning — spare NAND beyond advertised capacity |
-| **BBM / BBT** | Bad Block Management / Bad Block Table |
-| **SPOR** | Sudden Power-Off Recovery |
-| **PLP** | Power-Loss Protection (supercapacitors) |
-| **VWC / FUA** | Volatile Write Cache / Force Unit Access |
-| **HMB** | Host Memory Buffer (host DRAM borrowed by DRAM-less SSDs) |
-| **LDPC** | Low-Density Parity-Check ECC |
-| **UECC** | Uncorrectable ECC error |
-| **PRP / SGL** | Physical Region Page / Scatter-Gather List (NVMe data pointers) |
-| **SQ/SQE, CQ/CQE** | Submission/Completion Queue and their Entries |
-| **tPROG / tR / tBERS** | NAND program (~1–2 ms) / read (~50–100 µs) / erase (~3–5 ms) time |
-| **IPC** | Inter-Processor Communication between cores |
-| **SED** | Self-Encrypting Drive |
-
----
-
-## 15. Common Pitfalls
-
-| # | Pitfall | Mitigation |
-|---|---------|------------|
-| 1 | **WAF spirals** — low OP + random writes push WAF to 10×+ | Monitor WAF via SMART; raise OP; ensure TRIM reaches the SSD. |
-| 2 | **Power-loss corruption** — L2P updated before NAND commit | Update L2P *after* program success; use per-page sequence numbers. |
-| 3 | **GC stalls** — free pool hits zero, GC blocks host I/O | Use high/low watermarks; run background GC early; never reach zero free. |
-| 4 | **L2P inconsistency after crash** — stale checkpoint + broken journal | Journal with CRC + seqno; validate each entry; scan open blocks on recovery. |
-| 5 | **Read-retry storms** — a worn block retries on every read | Refresh (re-read/rewrite) high-retry blocks; track per-block retry frequency. |
-| 6 | **Multi-core races** — two cores update L2P for the same LBA | Per-LBA-range locks or serialize host-write vs GC on the same range; stress test. |
