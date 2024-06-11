@@ -605,9 +605,3 @@ PLP-protected DRAM buffer) and the NAND program happens in the background.
 | 4 | **L2P inconsistency after crash** — stale checkpoint + broken journal | Journal with CRC + seqno; validate each entry; scan open blocks on recovery. |
 | 5 | **Read-retry storms** — a worn block retries on every read | Refresh (re-read/rewrite) high-retry blocks; track per-block retry frequency. |
 | 6 | **Multi-core races** — two cores update L2P for the same LBA | Per-LBA-range locks or serialize host-write vs GC on the same range; stress test. |
-
----
-
-*Source: distilled from the SSD firmware architecture knowledge-base and interview
-notes in this repository. See also the FTL algorithms, NVMe, and NAND flash docs
-under `knowledge-base/`.*
