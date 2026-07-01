@@ -2,6 +2,7 @@
 
 Clean, structured study notes **and slides** on **SSD Firmware Architecture**.
 
+
 ## 📂 Files
 
 | File | Description |
